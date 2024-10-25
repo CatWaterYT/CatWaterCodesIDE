@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatWaterCodesIDE", "CatWaterCodesIDE.csproj", "{67FB4F23-F638-4CB3-8C80-EF4C4F6173C6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{67FB4F23-F638-4CB3-8C80-EF4C4F6173C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67FB4F23-F638-4CB3-8C80-EF4C4F6173C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67FB4F23-F638-4CB3-8C80-EF4C4F6173C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67FB4F23-F638-4CB3-8C80-EF4C4F6173C6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C2C90210-CE0E-4FDB-AF6C-74D88933A321}
+	EndGlobalSection
+EndGlobal

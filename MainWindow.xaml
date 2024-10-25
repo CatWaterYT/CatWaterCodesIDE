@@ -1,0 +1,74 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CatWaterCodes_IDE"
+        xmlns:dragablz="http://dragablz.net/winfx/xaml/dragablz" xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" xmlns:dockablz="http://dragablz.net/winfx/xaml/dockablz" x:Class="CatWaterCodes_IDE.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+
+    <DockPanel VerticalAlignment="Stretch" LastChildFill="True">
+
+        <ToolBar HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="800" DockPanel.Dock="Top">
+            <Menu>
+                <MenuItem Header="File">
+                    <Button Content="New" Click="NewFileBtn"/>
+                    <Button Content="Save" Click="SaveBtn"/>
+                    <Button Content="Save As..." Click="SaveAsBtn"/>
+                </MenuItem>
+
+                <MenuItem Header="Window">
+                    <Button Content="New Window..." Click="NewFileBtn"/>
+                    <Button Content="Generic Browser" Click="NewBrowser"/>
+                    <MenuItem Header="Websites">
+                        <MenuItem Header="Entertainement">
+                            <Button Content="Spotify" Click="NewOpenURL" Tag="https://open.spotify.com"/>
+                            <Button Content="YouTube" Click="NewOpenURL" Tag="https://www.youtu.be"/>
+                            <Button Content="Netflix" Click="NewOpenURL" Tag="https://www.netflix.com"/>
+                        </MenuItem>
+                        <MenuItem Header="Programming">
+                            <Button Content="LeetCode" Click="NewOpenURL" Tag="https://www.leetcode.com"/>
+                            <Button Content="ShaderToy" Click="NewOpenURL" Tag="https://www.shadertoy.com"/>
+                        </MenuItem>
+                        <MenuItem Header="Tools">
+                            <Button Content="GitHub" Click="NewOpenURL" Tag="https://www.github.com"/>
+                            <Button Content="ChatGPT" Click="NewOpenURL" Tag="https://www.chatgpt.com"/>
+                        </MenuItem>
+                    </MenuItem>
+                </MenuItem>
+                <!--Add more toolbar items here-->
+            </Menu>
+        </ToolBar>
+
+        <dockablz:Layout Partition="2AE89D18-F236-4D20-9605-6C03319038E6" Name="RootLayout"
+                     FloatingItemsSource="{Binding ToolItems}"
+                     FloatingItemHeaderMemberPath="Header"
+                     IsFloatDropZoneEnabled="True"
+                     ClosingFloatingItemCallback="{Binding ClosingFloatingItemHandler}"
+                     FloatingItemsContainerMargin="0 2 0 0"
+                     VerticalAlignment="Stretch"
+                     VerticalContentAlignment="Stretch">
+
+            <dockablz:Layout.BranchTemplate>
+                <DataTemplate>
+                    <dragablz:TabablzControl>
+                        <dragablz:TabablzControl.InterTabController>
+                            <dragablz:InterTabController InterTabClient="{Binding InterTabClient}" Partition="2AE89D18-F236-4D20-9605-6C03319038E6" />
+                        </dragablz:TabablzControl.InterTabController>
+                    </dragablz:TabablzControl>
+                </DataTemplate>
+            </dockablz:Layout.BranchTemplate>
+
+            <dragablz:TabablzControl x:Name="InitialTabablzControl"
+                                 FixedHeaderCount="1"
+                                 AddLocationHint="After">
+                <dragablz:TabablzControl.InterTabController>
+                    <dragablz:InterTabController InterTabClient="{Binding InterTabClient}" Partition="2AE89D18-F236-4D20-9605-6C03319038E6" />
+                </dragablz:TabablzControl.InterTabController>
+            </dragablz:TabablzControl>
+
+        </dockablz:Layout>
+    </DockPanel>
+</Window>
