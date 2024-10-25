@@ -1,6 +1,4 @@
-# CatWaterCodesIDE
-### by programmers, for programmers.
-
+# CatWaterCodesIDE ### by programmers, for programmers.
 # Features:
 ## Thanks to the odcking and tearable tab systems, CWCIDE can:
   -open multiple tabs at the same time
